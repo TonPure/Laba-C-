@@ -1,0 +1,60 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Dice
+{
+    public class Dice
+    {
+        private static int t;
+        private static int p;
+        public static int c;
+        public Dice()
+        {
+            t = 0;
+            p = 0;
+        }
+        public static int T
+        {
+            get
+            {
+                return t;
+            }
+            set
+            {
+                t+=value;
+            }
+        }
+        public static int P
+        {
+            get
+            {
+                return p;
+            }
+            set
+            {
+                p += value;
+            }
+        }
+        
+        
+        public static int randomNumber()
+        {
+            var rnd = new Random();
+            return rnd.Next(1, 6);
+        }
+        public static int increasePoints()
+        {
+            c = randomNumber();
+            Dice.P = c;
+            return c; 
+        }
+        public static void numberThrows()
+        {
+            Dice.T=1;
+        }
+
+    }
+}

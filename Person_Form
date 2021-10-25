@@ -1,0 +1,53 @@
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+
+namespace Person
+{
+    public partial class Form1 : Form
+    {
+        Class1 p = new Class1("Алексей", "Иванов");
+        public Form1()
+        {
+            InitializeComponent();
+
+            textBox1.Text = p.FirstName;
+            textBox2.Text = p.LastName;
+            numericUpDown1.Value = p.Age;
+
+            p.AgeChanged += new Class1.d(AgeChanged);
+        }
+
+        public void AgeChanged()
+        {
+            MessageBox.Show("Возраст изменился на " + p.Age.ToString());
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("Изменить имя?", "Подтверждение", MessageBoxButtons.OKCancel) == System.Windows.Forms.DialogResult.OK)
+            {
+                p.FirstName = textBox1.Text;
+            }
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("Изменить фамилию?", "Подтверждение", MessageBoxButtons.OKCancel) == System.Windows.Forms.DialogResult.OK)
+            {
+                p.LastName = textBox2.Text;
+            }
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            p.Age = (int)numericUpDown1.Value;
+        }
+    }
+}

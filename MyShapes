@@ -1,0 +1,33 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+
+namespace MyShapes
+{
+    public class Square
+    {
+      public static void Name()
+        {
+            MessageBox.Show("Класс Квадрат_1");
+        }
+    }
+
+    public class Circle
+    {
+        public static void Name()
+        {
+             MessageBox.Show("Класс Круг_1");
+        }
+    }
+
+    public class Hexagon
+    {
+        public static void Name()
+        {
+            MessageBox.Show("Класс Шестиугольник_1");
+        }
+    }
+}
